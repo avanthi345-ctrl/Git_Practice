@@ -18,4 +18,4 @@ jobs:
       - name: Install Playwright browsers
         run: python -m playwright install --with-deps chromium
       - name: Run tests
-        run: pytest
+        run: pytest --tracing=retain-on-failure

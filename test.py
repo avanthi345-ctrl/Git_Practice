@@ -1,5 +1,5 @@
 print("Hello Git")
 print("Learning CI/CD from master and branch")
-print("I am avanthika")
+print("Hello Avanthika! Jenkins picked up my latest code.")
 print("Working on login automation")
 print("Learning GitHub branches")

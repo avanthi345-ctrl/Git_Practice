@@ -22,6 +22,10 @@ jobs:
       - name: Upload Playwright traces
         if: always()
         uses: actions/upload-artifact@v4
+      - name: Test GitHub Secret
+        env:
+          TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
+        run: echo "Username secret is available"
         with:
           name: playwright-traces
           path: test-results/

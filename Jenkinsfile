@@ -22,9 +22,14 @@ pipeline {
 
         stage('Execute Python') {
             steps {
-                bat '"C:\\Users\\SHASHWATH\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m pytest -v'
+                bat '"C:\\Users\\SHASHWATH\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m pytest -v --junitxml=pytest-results.xml'
             }
         }
+        post {
+           always {
+              junit 'pytest-results.xml'
+           }
+       }
 
        }
 

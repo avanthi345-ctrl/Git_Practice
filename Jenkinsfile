@@ -13,7 +13,12 @@ pipeline {
         steps {
              bat '"C:\\Users\\SHASHWATH\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m pip install -r requirements.txt'
               }
-            }
+        }
+        stage('Install Playwright Browsers') {
+        steps {
+            bat '"C:\\Users\\SHASHWATH\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m playwright install chromium'
+              }
+        }    
 
         stage('Execute Python') {
             steps {

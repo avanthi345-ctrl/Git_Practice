@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Welcome') {
+            steps {
+                echo 'Hello Avanthika!'
+                echo 'My first Jenkins Pipeline is running!'
+            }
+        }
+
+        stage('Execute Python') {
+            steps {
+                bat '"C:\\Users\\SHASHWATH\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" test.py'
+            }
+        }
+    }
+}

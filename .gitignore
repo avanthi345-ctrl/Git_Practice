@@ -1,2 +1,5 @@
 secret.txt
 __pycache__/
+pytest-results.xml
+test_sample.py
+.env

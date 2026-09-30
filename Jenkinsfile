@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        APP_CREDENTIALS = credentials('demo-app-credentials')
+    }
+
     stages {
         stage('Welcome') {
             steps {
@@ -8,6 +12,12 @@ pipeline {
                 echo 'My first Jenkins Pipeline is running!'
             }
         }
+
+    stage('Credential Test') {
+    steps {
+        bat 'echo Username is %APP_CREDENTIALS_USR%'
+         }
+       }    
 
         stage('Install Dependencies') {
             steps {
